@@ -1,5 +1,5 @@
 {
-    "name": "mockjs",
+    "name": "mock",
     "version": "1.0.0",
     "description": "Mock.js - data generator on steroids",
     "main": "./src/index.ts",
@@ -14,15 +14,15 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/mock-js/mock-js.git"
+        "url": "git+https://github.com/mock-js/mock.git"
     },
     "keywords": [],
     "author": "Mock.js contributors",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/mock-js/mock-js/issues"
+        "url": "https://github.com/mock-js/mock/issues"
     },
-    "homepage": "https://github.com/mock-js/mock-js#readme",
+    "homepage": "https://github.com/mock-js/mock#readme",
     "devDependencies": {
         "@types/jest": "^26.0.3",
         "@types/node": "^14.0.14",

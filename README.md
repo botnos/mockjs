@@ -1,2 +1,4 @@
-# loremjs
-LoremJS allows you to easily generate data for your mockups 
+# Mock.js
+---
+## Mock.js - data generation on steroids
+
