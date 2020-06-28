@@ -1,7 +1,17 @@
 let _locale = 'en';
 
-export const locale = (loc) => {
+const locale = (loc) => {
     _locale = loc;
+}
+
+export const mock = {
+    get person() {
+        return person;
+    },
+
+    locale(loc) {
+        locale(loc);
+    }
 }
 
 /**
