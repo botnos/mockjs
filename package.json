@@ -1,0 +1,29 @@
+{
+    "name": "loremjs",
+    "version": "1.0.0",
+    "description": "LoremJS allows you to easily generate data for your mockups",
+    "main": "index.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "build": "tsc",
+        "start": "node ./dist/index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/botnos/loremjs.git"
+    },
+    "keywords": [],
+    "author": "Botnos & LoremJS Contributors",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/botnos/loremjs/issues"
+    },
+    "homepage": "https://github.com/botnos/loremjs#readme",
+    "devDependencies": {
+        "@types/node": "^14.0.14",
+        "typescript": "^3.9.5"
+    }
+}
