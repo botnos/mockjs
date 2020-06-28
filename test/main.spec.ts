@@ -1,4 +1,4 @@
-import { person } from '../src/mod';
+import {person} from '../src/mock';
 import firstNamesEn from '../src/locales/en/first_name';
 
 test('should return a valid first names', () => {
