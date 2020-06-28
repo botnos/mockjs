@@ -39,7 +39,7 @@ function getLocale(locale: string | undefined) {
 // }
 
 function getStrings(locale: string, type: string) {
-    return require(`./locales/${locale}/${type}.json`);
+    return require(`./locales/${locale}/${type}`).default;
 }
 
 function getRandomFromArray(arr: any) {
