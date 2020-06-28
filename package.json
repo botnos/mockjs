@@ -1,8 +1,8 @@
 {
-    "name": "loremjs",
+    "name": "mockjs",
     "version": "1.0.0",
-    "description": "LoremJS allows you to easily generate data for your mockups",
-    "main": "index.js",
+    "description": "Mock.js - data generator on steroids",
+    "main": "./src/index.ts",
     "directories": {
         "test": "test"
     },
@@ -10,24 +10,27 @@
         "build": "tsc",
         "start": "node ./dist/index.js",
         "test": "jest",
-        "test-watch": "npm run test -- --watch"
+        "test-watch": "npm run test -- --watchAll"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/botnos/loremjs.git"
+        "url": "git+https://github.com/mock-js/mock-js.git"
     },
     "keywords": [],
-    "author": "Botnos & LoremJS Contributors",
-    "license": "ISC",
+    "author": "Mock.js contributors",
+    "license": "MIT",
     "bugs": {
-        "url": "https://github.com/botnos/loremjs/issues"
+        "url": "https://github.com/mock-js/mock-js/issues"
     },
-    "homepage": "https://github.com/botnos/loremjs#readme",
+    "homepage": "https://github.com/mock-js/mock-js#readme",
     "devDependencies": {
         "@types/jest": "^26.0.3",
         "@types/node": "^14.0.14",
         "jest": "^26.1.0",
         "ts-jest": "^26.1.1",
         "typescript": "^3.9.5"
+    },
+    "jest": {
+        "preset": "ts-jest"
     }
 }
