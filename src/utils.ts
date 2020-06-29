@@ -9,9 +9,15 @@ export const getLocaleFromProps = (props: IMockProps) => {
     return props.locale;
 }
 
+let localeMap = new Map();
+
 export const getStrings = (props: IMockProps, type: string) => {
     const locale = getLocaleFromProps(props);
-    return require(`./locales/${locale}/${type}`).default;
+    if (localeMap.has(locale)) {
+        return localeMap.get(locale);
+    }
+    localeMap.set(locale, require(`./locales/${locale}/${type}`).default);
+    return localeMap.get(locale);
 }
 
 export const getRandomFromArray = (arr: any) => {

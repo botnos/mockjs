@@ -1,22 +1,23 @@
-import {Person} from './providers/person';
+import {PersonProvider} from './providers/person';
+import {LOCALE} from "./locales/codes";
 
 export interface IMockProps {
-    locale: string,
-    tempLocale?: string
+    locale: LOCALE,
+    tempLocale?: LOCALE
 }
 
 export class Mock {
     private props: IMockProps = {
-        locale: 'en'
+        locale: LOCALE.EN
     }
 
-    constructor(locale?: string) {
+    constructor(locale?: LOCALE) {
         if (locale !== undefined) {
             this.props.locale = locale;
         }
     }
 
-    locale(locale?: string) {
+    locale(locale?: LOCALE) {
         if (locale !== undefined) {
             this.props.tempLocale = locale;
         }
@@ -24,11 +25,8 @@ export class Mock {
     }
 
     get person() {
-        return new Person(this.props);
+        return new PersonProvider(this.props);
     }
 }
 
-/**
- * Shorthand helpers
- */
-// export const person = new Person();
+export const LOC = LOCALE;
