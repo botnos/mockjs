@@ -1,20 +1,14 @@
-import {getRandomFromArray, getStrings} from "../utils";
-import {getLocale} from "../mock";
+import {IMockProps} from "../mock";
+import {getString} from "../utils";
 
-/**
- * A Person object
- *
- * @type {{firstName(locale: string): any}}
- */
-export const personProvider = {
-    /**
-     * First name
-     *
-     * @param {string} locale
-     * @returns {any}
-     */
-    firstName(locale?: string): any {
-        const arr = getStrings(getLocale(locale), 'first_name');
-        return getRandomFromArray(arr);
+export class Person {
+    protected props;
+
+    constructor(props: IMockProps) {
+        this.props = props;
+    }
+
+    get firstName() {
+        return getString(this.props, 'first_name');
     }
 }

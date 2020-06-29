@@ -1,24 +1,34 @@
-let _locale = 'en';
+import {Person} from './providers/person';
 
-const locale = (loc) => {
-    _locale = loc;
+export interface IMockProps {
+    locale: string,
+    tempLocale?: string
 }
 
-export const mock = {
-    get person() {
-        return require('./providers/person').personProvider;
-    },
-
-    locale(loc) {
-        locale(loc);
+export class Mock {
+    private props: IMockProps = {
+        locale: 'en'
     }
-}
 
-export const getLocale = (locale?: string | undefined) => {
-    return (locale) ? locale : _locale;
+    constructor(locale?: string) {
+        if (locale !== undefined) {
+            this.props.locale = locale;
+        }
+    }
+
+    locale(locale?: string) {
+        if (locale !== undefined) {
+            this.props.tempLocale = locale;
+        }
+        return this;
+    }
+
+    get person() {
+        return new Person(this.props);
+    }
 }
 
 /**
  * Shorthand helpers
  */
-export const person = mock.person;
+// export const person = new Person();

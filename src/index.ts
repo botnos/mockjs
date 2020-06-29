@@ -1,9 +1,28 @@
-import {mock} from './mock';
+import {Mock} from './mock';
 
-console.log('Person:', mock.person.firstName());
-mock.locale('de');
-console.log('person', mock.person.firstName());
-mock.locale('es');
-console.log('person', mock.person.firstName());
+const mock = new Mock('en');
 
-console.log(`My name is ${mock.person.firstName('de')}`);
+console.log('First:', mock.person.firstName);
+
+console.log('First:', mock.locale('de').person.firstName);
+
+console.log('First:', mock.person.firstName);
+
+const mockEs = new Mock('es');
+
+console.log('First:', mockEs.person.firstName);
+console.log('First:', mockEs.person.firstName);
+console.log('First:', mockEs.person.firstName);
+
+
+// console.log('person', Mock.person.firstName);
+// // Mock.locale('es');
+//
+// console.log('person', Mock.person.firstName);
+// // console.log(`Maine name ist ${person.firstName}`);
+// console.log('person', Mock.person.firstName);
+// console.log('person', Mock.person.firstName);
+// // console.log('Mi nombre es ', person.firstName);
+// // console.log('person', Mock.person('de').firstName);
+// console.log('person', Mock.person.firstName);
+

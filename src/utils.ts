@@ -1,18 +1,23 @@
-/**
- *
- * @param {string} locale
- * @param {string} type
- * @returns {any}
- */
-export const getStrings = (locale: string, type: string) => {
+import {IMockProps} from "./mock";
+
+export const getLocaleFromProps = (props: IMockProps) => {
+    if (props.tempLocale) {
+        const loc = props.tempLocale;
+        props.tempLocale = undefined;
+        return loc;
+    }
+    return props.locale;
+}
+
+export const getStrings = (props: IMockProps, type: string) => {
+    const locale = getLocaleFromProps(props);
     return require(`./locales/${locale}/${type}`).default;
 }
 
-/**
- *
- * @param arr
- * @returns {any}
- */
 export const getRandomFromArray = (arr: any) => {
     return arr[Math.floor(Math.random() * arr.length)];
+}
+
+export const getString = (props: IMockProps, fieldName: string) => {
+    return getRandomFromArray(getStrings(props, fieldName));
 }
