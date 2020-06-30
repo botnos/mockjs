@@ -16,7 +16,7 @@ export const getStrings = (props: IMockProps, type: string) => {
     if (localeMap.has(locale)) {
         return localeMap.get(locale);
     }
-    localeMap.set(locale, require(`./locales/${locale}/${type}`).default);
+    localeMap.set(locale, require(`../strings/${locale}/${type}`).default);
     return localeMap.get(locale);
 }
 

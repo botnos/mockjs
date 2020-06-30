@@ -1,4 +1,4 @@
-import {IMockProps} from "../mock";
+import {IMockProps} from "../lib/mock";
 
 export abstract class BaseProvider {
     protected props;

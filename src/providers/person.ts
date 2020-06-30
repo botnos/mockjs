@@ -1,5 +1,5 @@
-import {IMockProps} from "../mock";
-import {getString} from "../utils";
+import {IMockProps} from "../lib/mock";
+import {getString} from "../lib/utils";
 import {BaseProvider} from "./base";
 
 export class PersonProvider extends BaseProvider {

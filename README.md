@@ -1,4 +1,4 @@
-# Mock.js
+# Index.js
 ---
-## Mock.js - data generation on steroids
+## Index.js - data generation on steroids
 
