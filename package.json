@@ -2,29 +2,8 @@
     "name": "mock",
     "version": "1.0.0",
     "description": "Mock.js - data generator on steroids",
-    "main": "src/tests.ts",
-    "directories": {
-        "test": "test"
+    "dependencies": {
     },
-    "scripts": {
-        "build": "tsc",
-        "start": "node ./dist/index.js",
-        "test": "jest --clearCache && jest",
-        "test-watch": "npm run test -- --watchAll",
-        "lint": "tslint src/*.ts test/*.ts "
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/mock-js/mock.git"
-    },
-    "keywords": [],
-    "author": "Mock.js contributors",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/mock-js/mock/issues"
-    },
-    "homepage": "https://github.com/mock-js/mock#readme",
-    "dependencies": {},
     "devDependencies": {
         "@types/jest": "^26.0.3",
         "@types/node": "^14.0.14",
@@ -33,6 +12,35 @@
         "tslint": "^6.1.2",
         "typescript": "^3.9.5"
     },
+    "scripts": {
+        "build": "tsc",
+        "start": "node ./dist/index.js",
+        "test": "jest --clearCache && jest",
+        "test-watch": "npm run test -- --watchAll",
+        "coverage": "npm test -- --coverage",
+        "lint": "tslint src/*.ts test/*.ts "
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mock-js/mock.git"
+    },
+    "keywords": [
+        "mock",
+        "generator",
+        "lorem",
+        "ipsum",
+        "fake"
+    ],
+    "main": "src/index.ts",
+    "directories": {
+        "test": "test"
+    },
+    "author": "Mock.js contributors",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/mock-js/mock/issues"
+    },
+    "homepage": "https://github.com/mock-js/mock#readme",
     "jest": {
         "preset": "ts-jest"
     }
