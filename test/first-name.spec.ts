@@ -1,4 +1,4 @@
-import {LOC, Mock} from '../src/mock';
+import {LOC, Mock} from '../src';
 import firstNamesEn from '../src/strings/en/first_name';
 import firstNamesDe from '../src/strings/de/first_name';
 import firstNamesEs from '../src/strings/es/first_name';
