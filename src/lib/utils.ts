@@ -1,6 +1,6 @@
-import {IMockProps} from "./mock";
+import {IMockOptions} from "./mock";
 
-export const getLocaleFromProps = (props: IMockProps) => {
+export const getLocaleFromProps = (props: IMockOptions) => {
     if (props.tempLocale) {
         const loc = props.tempLocale;
         props.tempLocale = undefined;
@@ -11,7 +11,7 @@ export const getLocaleFromProps = (props: IMockProps) => {
 
 let localeMap = new Map();
 
-export const getStrings = (props: IMockProps, type: string) => {
+export const getStrings = (props: IMockOptions, type: string) => {
     const locale = getLocaleFromProps(props);
     if (localeMap.has(locale)) {
         return localeMap.get(locale);
@@ -24,6 +24,6 @@ export const getRandomFromArray = (arr: any) => {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 
-export const getString = (props: IMockProps, fieldName: string) => {
+export const getString = (props: IMockOptions, fieldName: string) => {
     return getRandomFromArray(getStrings(props, fieldName));
 }

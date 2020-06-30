@@ -1,9 +1,9 @@
-import {IMockProps} from "../lib/mock";
+import {IMockOptions} from "..";
 
 export abstract class BaseProvider {
     protected props;
 
-    protected constructor(props: IMockProps) {
+    protected constructor(props: IMockOptions) {
         this.props = props;
     }
 }

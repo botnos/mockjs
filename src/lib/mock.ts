@@ -1,34 +1,34 @@
 import {PersonProvider} from '../providers/person';
-import {LOC} from "../strings/locale";
+import {LOC} from './locale';
 
-export interface IMockProps {
+export interface IMockOptions {
     locale: LOC,
     tempLocale?: LOC
 }
 
 export class Mock {
-    private readonly props: IMockProps = {
+    private readonly options: IMockOptions = {
         locale: LOC.EN
     }
 
-    constructor(options?: LOC | IMockProps) {
+    constructor(options?: LOC | IMockOptions) {
         if (options !== undefined) {
             if (typeof options === 'string') {
-                this.props.locale = options;
+                this.options.locale = options;
             } else if (typeof options === 'object') {
-                this.props = options;
+                this.options = options;
             }
         }
     }
 
     locale(locale?: LOC) {
         if (locale !== undefined) {
-            this.props.tempLocale = locale;
+            this.options.tempLocale = locale;
         }
         return this;
     }
 
     get person() {
-        return new PersonProvider(this.props);
+        return new PersonProvider(this.options);
     }
 }

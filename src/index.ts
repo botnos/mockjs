@@ -1,2 +1,2 @@
-export {LOC} from './strings/locale';
-export {Mock, IMockProps} from './lib/mock';
+export {LOC} from './lib/locale';
+export {Mock, IMockOptions} from './lib/mock';

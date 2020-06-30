@@ -1,10 +1,10 @@
-import {IMockProps} from "../lib/mock";
+import {IMockOptions} from "..";
 import {getString} from "../lib/utils";
 import {BaseProvider} from "./base";
 
 export class PersonProvider extends BaseProvider {
 
-    constructor(props: IMockProps) {
+    constructor(props: IMockOptions) {
         super(props);
     }
 
