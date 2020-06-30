@@ -1,4 +1,5 @@
 import {PersonProvider} from '../providers/person';
+import {LoremProvider} from '../providers/lorem';
 import {LOC} from './locale';
 
 export interface IMockOptions {
@@ -30,5 +31,9 @@ export class Mock {
 
     get person() {
         return new PersonProvider(this.options);
+    }
+
+    get lorem() {
+        return new LoremProvider(this.options);
     }
 }
