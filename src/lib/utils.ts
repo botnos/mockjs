@@ -1,4 +1,4 @@
-import {IMockOptions} from "./mock";
+import {IMockOptions} from './mock';
 
 export const getLocaleFromProps = (props: IMockOptions) => {
     if (props.tempLocale) {
@@ -7,9 +7,9 @@ export const getLocaleFromProps = (props: IMockOptions) => {
         return loc;
     }
     return props.locale;
-}
+};
 
-let localeMap = new Map();
+const localeMap = new Map();
 
 export const getStrings = (props: IMockOptions, type: string) => {
     const locale = getLocaleFromProps(props);
