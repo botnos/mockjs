@@ -12,8 +12,8 @@ describe('firstName', () => {
     });
 
     test('should return a valid first name  with locale in Mock options', () => {
-        const mock = new Mock(LOC.DE);
-        expect(firstNamesDe).toContain(mock.person.firstName);
+        const _mock = new Mock(LOC.DE);
+        expect(firstNamesDe).toContain(_mock.person.firstName);
     });
 
     test('should return a valid first name with options object in Mock', () => {
