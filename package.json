@@ -18,7 +18,7 @@
         "test": "jest --clearCache && jest",
         "test-watch": "npm run test -- --watchAll",
         "coverage": "npm test -- --coverage",
-        "lint": "tslint src/*.ts test/*.ts "
+        "lint": "tslint src/**/*.ts test/**/*.ts "
     },
     "repository": {
         "type": "git",

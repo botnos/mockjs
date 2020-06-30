@@ -1,6 +1,6 @@
 export default [
-    "Peter",
-    "Paul",
-    "Roger",
-    "Jon"
+    'Peter',
+    'Paul',
+    'Roger',
+    'Jon'
 ]

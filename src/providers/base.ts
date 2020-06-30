@@ -1,4 +1,4 @@
-import {IMockOptions} from "..";
+import {IMockOptions} from '..';
 
 export abstract class BaseProvider {
     protected props;

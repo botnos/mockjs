@@ -1,6 +1,6 @@
-import {IMockOptions} from "..";
-import {getString} from "../lib/utils";
-import {BaseProvider} from "./base";
+import {IMockOptions} from '..';
+import {getString} from '../lib/utils';
+import {BaseProvider} from './base';
 
 export class PersonProvider extends BaseProvider {
 

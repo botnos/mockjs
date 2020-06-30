@@ -1,5 +1,5 @@
 export default [
-    "Ricardo",
-    "Jorge",
-    "Virginia"
+    'Ricardo',
+    'Jorge',
+    'Virginia'
 ]

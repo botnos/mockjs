@@ -1,4 +1,4 @@
 export default [
-    "Johan",
-    "Wolfgang"
+    'Johan',
+    'Wolfgang'
 ]
