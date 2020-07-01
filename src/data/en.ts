@@ -4,13 +4,13 @@ export default class implements IMockData {
     person(): IMockPerson {
         return {
             firstNameMale: [
-                'Wolfgang', 'Olaf', 'Johan'
+                'Peter', 'Paul', 'Roger', 'Jon'
             ],
             firstNameFemale: [
-                'Petra', 'Hilde'
+                'Martha', 'Susan'
             ],
             lastName: [
-                'Maier', 'Schmidt'
+                'Peters', 'Rogers'
             ]
         };
     }

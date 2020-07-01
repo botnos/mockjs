@@ -1,4 +1,0 @@
-export default [
-    'Johan',
-    'Wolfgang'
-];

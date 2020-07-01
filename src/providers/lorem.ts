@@ -4,8 +4,8 @@ import {BaseProvider} from './base';
 
 export class LoremProvider extends BaseProvider {
 
-    constructor(props: IMockOptions) {
-        super(props);
+    constructor(options: IMockOptions) {
+        super(options);
     }
 
     /**

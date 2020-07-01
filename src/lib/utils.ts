@@ -1,29 +1,27 @@
 import {IMockOptions} from './mock';
-
-export const getLocaleFromProps = (props: IMockOptions) => {
-    if (props.tempLocale) {
-        const loc = props.tempLocale;
-        props.tempLocale = undefined;
-        return loc;
-    }
-    return props.locale;
-};
+import {IMockData} from './data';
 
 const localeMap = new Map();
 
-export const getStrings = (props: IMockOptions, type: string) => {
-    const locale = getLocaleFromProps(props);
+export const getData = (options: IMockOptions): IMockData => {
+    const locale = getLocaleFromOptions(options);
     if (localeMap.has(locale)) {
         return localeMap.get(locale);
     }
-    localeMap.set(locale, require(`../data/${locale}/${type}`).default);
+    const Data = require(`../data/${locale}`).default;
+    localeMap.set(locale, new Data());
     return localeMap.get(locale);
+};
+
+export const getLocaleFromOptions = (options: IMockOptions) => {
+    if (options.tempLocale) {
+        const loc = options.tempLocale;
+        options.tempLocale = undefined;
+        return loc;
+    }
+    return options.locale;
 };
 
 export const getRandomFromArray = (arr: any) => {
     return arr[Math.floor(Math.random() * arr.length)];
-};
-
-export const getString = (props: IMockOptions, fieldName: string) => {
-    return getRandomFromArray(getStrings(props, fieldName));
 };

@@ -1,9 +1,9 @@
 import {IMockOptions} from '..';
 
 export abstract class BaseProvider {
-    protected props;
+    protected options;
 
-    protected constructor(props: IMockOptions) {
-        this.props = props;
+    protected constructor(options: IMockOptions) {
+        this.options = options;
     }
 }

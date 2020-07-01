@@ -1,14 +1,21 @@
 import {IMockOptions} from '..';
-import {getString} from '../lib/utils';
+import {getData, getRandomFromArray} from '../lib/utils';
 import {BaseProvider} from './base';
+import {IMockPerson} from '../lib/data';
 
 export class PersonProvider extends BaseProvider {
 
-    constructor(props: IMockOptions) {
-        super(props);
+    private person: IMockPerson;
+
+    constructor(options: IMockOptions) {
+        super(options);
+        this.person = getData(options).person();
     }
 
     get firstName() {
-        return getString(this.props, 'first_name');
+        return getRandomFromArray([
+            ...this.person.firstNameFemale,
+            ...this.person.firstNameMale
+        ]);
     }
 }
