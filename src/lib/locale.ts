@@ -1,5 +1,6 @@
-export enum LOC {
-    ES = 'es',
-    EN = 'en',
-    DE = 'de',
+export enum Loc {
+    es = 'es',
+    en = 'en',
+    de = 'de',
+    de_DE = 'de_DE',
 }

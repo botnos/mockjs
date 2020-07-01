@@ -1,18 +1,18 @@
 import {PersonProvider} from '../providers/person';
 import {LoremProvider} from '../providers/lorem';
-import {LOC} from './locale';
+import {Loc} from './locale';
 
 export interface IMockOptions {
-    locale: LOC,
-    tempLocale?: LOC
+    locale: Loc;
+    tempLocale?: Loc;
 }
 
 export class Mock {
     private readonly options: IMockOptions = {
-        locale: LOC.EN
-    }
+        locale: Loc.en
+    };
 
-    constructor(options?: LOC | IMockOptions) {
+    constructor(options?: Loc | IMockOptions) {
         if (options !== undefined) {
             if (typeof options === 'string') {
                 this.options.locale = options;
@@ -22,7 +22,7 @@ export class Mock {
         }
     }
 
-    locale(locale?: LOC) {
+    locale(locale?: Loc) {
         if (locale !== undefined) {
             this.options.tempLocale = locale;
         }

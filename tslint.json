@@ -3,6 +3,10 @@
         "tslint:latest"
     ],
     "rules": {
-        "quotemark": [true, "single"]
+        "quotemark": [true, "single"],
+        "no-unused-expression": true,
+        "trailing-comma": true,
+        "semicolon": true,
+        "no-console": true
     }
 }

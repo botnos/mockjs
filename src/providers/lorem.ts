@@ -76,5 +76,5 @@ export class LoremProvider extends BaseProvider {
         'recusandae', 'itaque', 'earum', 'rerum', 'hic', 'tenetur', 'a',
         'sapiente', 'delectus', 'ut', 'aut', 'reiciendis', 'voluptatibus',
         'maiores', 'doloribus', 'asperiores', 'repellat'
-    ]
+    ];
 }
