@@ -10,7 +10,7 @@ export default class implements IMockData {
                 'Virginia', 'Maria', 'Susana'
             ],
             lastName: [
-                'Sanchez', 'Rodriguez'
+                'Sanchez', 'Rodriguez', 'Perez', 'Dominguez'
             ]
         };
     }

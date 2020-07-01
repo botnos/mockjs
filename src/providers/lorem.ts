@@ -1,12 +1,7 @@
-import {IMockOptions} from '..';
 import {getRandomFromArray} from '../lib/utils';
 import {BaseProvider} from './base';
 
 export class LoremProvider extends BaseProvider {
-
-    constructor(options: IMockOptions) {
-        super(options);
-    }
 
     /**
      *

@@ -2,8 +2,12 @@ import {IMockOptions} from '..';
 
 export abstract class BaseProvider {
     protected options;
+    protected tempOptions;
 
-    protected constructor(options: IMockOptions) {
+    constructor(options: IMockOptions, tempOptions?: IMockOptions) {
         this.options = options;
+        if (tempOptions) {
+            this.tempOptions = tempOptions;
+        }
     }
 }

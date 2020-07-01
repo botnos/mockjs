@@ -50,4 +50,12 @@ describe('firstName', () => {
             ...ES.person().firstNameMale
         ]).toContain(mock.locale(Loc.es).person.firstName);
     });
+
+    test('should return only female first names', () => {
+        expect(EN.person().firstNameFemale).toContain(mock.female().person.firstName);
+    });
+
+    test('should return only male first names', () => {
+        expect(EN.person().firstNameMale).toContain(mock.male().person.firstName);
+    });
 });
