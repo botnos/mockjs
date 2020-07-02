@@ -1,6 +1,7 @@
-import {IMockData, IMockPerson} from '../lib/data';
+import {IMockAddress, IMockData, IMockPerson} from '../lib/data';
 
 export default class implements IMockData {
+
     person(): IMockPerson {
         return {
             firstNameMale: [
@@ -12,6 +13,12 @@ export default class implements IMockData {
             lastName: [
                 'Maier', 'Schmidt'
             ]
+        };
+    }
+
+    address(): IMockAddress {
+        return {
+            state: []
         };
     }
 }

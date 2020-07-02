@@ -2,6 +2,7 @@ import {PersonProvider} from '../providers/person';
 import {LoremProvider} from '../providers/lorem';
 import {Loc} from './locale';
 import {Gender} from './gender';
+import {AddressProvider} from '../providers/address';
 
 export interface IMockOptions {
     locale: Loc | undefined;
@@ -16,7 +17,7 @@ export class Mock {
     };
 
     private readonly options: IMockOptions = {
-        locale: Loc.en,
+        locale: Loc.en_US,
         gender: Gender.U,
     };
 
@@ -53,6 +54,10 @@ export class Mock {
 
     get person() {
         return new PersonProvider(this.options, this.tempOptions);
+    }
+
+    get address() {
+        return new AddressProvider(this.options, this.tempOptions);
     }
 
     get lorem() {

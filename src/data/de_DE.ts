@@ -1,15 +1,17 @@
 import DE from './de';
-import {IMockPerson} from '../lib/data';
+import {IMockAddress, IMockPerson} from '../lib/data';
 
 export default class extends DE {
+
     person(): IMockPerson {
+        return super.person();
+    }
+
+    address(): IMockAddress {
         return {
-            firstNameMale: [
-                ...super.person().firstNameMale,
-                'Helmut', 'Manfred'
-            ],
-            firstNameFemale: super.person().firstNameFemale,
-            lastName: super.person().lastName
+            state: [
+                'Baden-Württemberg', 'Bayern', 'Berlin', 'Brandenburg', 'Bremen', 'Hamburg', 'Hessen', 'Mecklenburg-Vorpommern', 'Niedersachsen', 'Nordrhein-Westfalen', 'Rheinland-Pfalz', 'Saarland', 'Sachsen', 'Sachsen-Anhalt', 'Schleswig-Holstein', 'Thüringen'
+            ]
         };
     }
 }

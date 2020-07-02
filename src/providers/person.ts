@@ -13,7 +13,7 @@ export class PersonProvider extends BaseProvider {
         this.person = getData(options, tempOptions).person();
     }
 
-    get firstName() {
+    get firstName(): string {
 
         const gender = getGenderFromOptions(this.options, this.tempOptions);
 
@@ -32,15 +32,15 @@ export class PersonProvider extends BaseProvider {
         ]);
     }
 
-    get lastName() {
+    get lastName(): string {
         return getRandomFromArray(this.person.lastName);
     }
 
-    get fullName() {
+    get fullName(): string {
         return `${this.firstName} ${this.lastName}`;
     }
 
-    get card() {
+    get card(): object {
         return {
             firstName: this.firstName,
             lastName: this.lastName,
