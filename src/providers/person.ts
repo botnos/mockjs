@@ -1,4 +1,4 @@
-import {IMockOptions} from '../mock';
+import {IMockOptions} from '..';
 import {getData, getGenderFromOptions, getRandomFromArray} from '../lib/utils';
 import {BaseProvider} from './base';
 import {IMockPerson} from '../lib/data';

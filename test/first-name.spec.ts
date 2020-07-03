@@ -1,4 +1,4 @@
-import {Loc, Mock} from '../src/mock';
+import {Loc, Mock} from '../src';
 import {getLocaleData} from '../src/lib/locale';
 
 const mock = new Mock();

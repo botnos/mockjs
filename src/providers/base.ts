@@ -1,4 +1,4 @@
-import {IMockOptions} from '../mock';
+import {IMockOptions} from '..';
 import {Gender} from '../lib/gender';
 
 export abstract class BaseProvider {

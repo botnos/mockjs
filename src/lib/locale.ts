@@ -2,7 +2,6 @@ import ES_ES from '../data/es_ES';
 import EN_US from '../data/en_US';
 import DE_DE from '../data/de_DE';
 
-
 export enum Loc {
     es_ES = 'es_ES',
     en_US = 'en_US',
