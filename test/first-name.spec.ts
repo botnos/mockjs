@@ -1,7 +1,11 @@
-import {Loc, Mock} from '../src';
-import {DE_DE, EN_US, ES_ES} from './test-helpers';
+import {Loc, Mock} from '../src/mock';
+import {getLocaleData} from '../src/lib/locale';
 
 const mock = new Mock();
+const ES_ES = getLocaleData(Loc.es_ES);
+const EN_US = getLocaleData(Loc.en_US);
+const DE_DE = getLocaleData(Loc.de_DE);
+
 
 describe('firstName', () => {
 
@@ -44,10 +48,10 @@ describe('firstName', () => {
     });
 
     test('should return only female first names', () => {
-        expect(EN_US.person().firstNameFemale).toContain(mock.female().person.firstName);
+        expect(EN_US.person().firstNameFemale).toContain(mock.person.female.firstName);
     });
 
     test('should return only male first names', () => {
-        expect(EN_US.person().firstNameMale).toContain(mock.male().person.firstName);
+        expect(EN_US.person().firstNameMale).toContain(mock.person.male.firstName);
     });
 });

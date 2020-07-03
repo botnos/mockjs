@@ -2,19 +2,24 @@
     "name": "mock",
     "version": "1.0.0",
     "description": "Mock.js - data generator on steroids",
-    "dependencies": {
-    },
+    "dependencies": {},
     "devDependencies": {
         "@types/jest": "^26.0.3",
         "@types/node": "^14.0.14",
         "jest": "^26.1.0",
+        "parcel-bundler": "^1.12.4",
+        "rimraf": "^3.0.2",
         "ts-jest": "^26.1.1",
         "tslint": "^6.1.2",
         "typescript": "^3.9.5"
     },
     "scripts": {
-        "build": "tsc",
-        "start": "node ./dist/index.js",
+        "build": "parcel build src/mock.ts --no-source-maps",
+        "build-node": "npm run build -- --target node",
+        "build-browser": "npm run build -- --target browser",
+        "build-tsc": "tsc",
+        "watch": "parcel watch src/mock.ts --no-source-maps",
+        "prebuild": "rimraf dist",
         "test": "jest --clearCache && jest",
         "test-watch": "npm run test -- --watchAll",
         "coverage": "npm test -- --coverage",
@@ -31,7 +36,9 @@
         "ipsum",
         "fake"
     ],
-    "main": "src/index.ts",
+    "main": "./src/mock.ts",
+    "source": "./src/mock.ts",
+    "types": "./dist/mock.d.ts",
     "directories": {
         "test": "test"
     },

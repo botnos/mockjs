@@ -38,16 +38,6 @@ export class Mock {
         return this;
     }
 
-    female() {
-        this.tempOptions.gender = Gender.F;
-        return this;
-    }
-
-    male() {
-        this.tempOptions.gender = Gender.M;
-        return this;
-    }
-
     //
     //  Providers registration
     //

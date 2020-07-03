@@ -1,4 +1,4 @@
-import {Mock} from '../src';
+import {Mock} from '../src/mock';
 
 const mock = new Mock();
 

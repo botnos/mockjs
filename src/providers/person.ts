@@ -1,4 +1,4 @@
-import {IMockOptions} from '..';
+import {IMockOptions} from '../mock';
 import {getData, getGenderFromOptions, getRandomFromArray} from '../lib/utils';
 import {BaseProvider} from './base';
 import {IMockPerson} from '../lib/data';
@@ -34,6 +34,10 @@ export class PersonProvider extends BaseProvider {
 
     get lastName(): string {
         return getRandomFromArray(this.person.lastName);
+    }
+
+    get name(): string {
+        return this.fullName;
     }
 
     get fullName(): string {

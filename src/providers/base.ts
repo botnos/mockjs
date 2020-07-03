@@ -1,4 +1,5 @@
-import {IMockOptions} from '..';
+import {IMockOptions} from '../mock';
+import {Gender} from '../lib/gender';
 
 export abstract class BaseProvider {
     protected options;
@@ -9,5 +10,15 @@ export abstract class BaseProvider {
         if (tempOptions) {
             this.tempOptions = tempOptions;
         }
+    }
+
+    get female() {
+        this.tempOptions.gender = Gender.F;
+        return this;
+    }
+
+    get male() {
+        this.tempOptions.gender = Gender.M;
+        return this;
     }
 }

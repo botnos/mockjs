@@ -1,6 +1,6 @@
 import {IMockOptions} from './mock';
 import {IMockData} from './data';
-import {Loc} from './locale';
+import {getLocaleData, Loc} from './locale';
 import {Gender} from './gender';
 
 const localeMap = new Map();
@@ -10,8 +10,7 @@ export const getData = (options: IMockOptions, tempOptions: IMockOptions): IMock
     if (localeMap.has(locale)) {
         return localeMap.get(locale);
     }
-    const Data = require(`../data/${locale}`).default;
-    localeMap.set(locale, new Data());
+    localeMap.set(locale, getLocaleData(locale));
     return localeMap.get(locale);
 };
 

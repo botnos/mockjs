@@ -1,7 +1,9 @@
-import {Loc, Mock} from '../src';
-import {DE_DE, EN_US} from './test-helpers';
+import {Loc, Mock} from '../src/mock';
+import {getLocaleData} from '../src/lib/locale';
 
 const mock = new Mock();
+const EN_US = getLocaleData(Loc.en_US);
+const DE_DE = getLocaleData(Loc.de_DE);
 
 describe('address', () => {
 

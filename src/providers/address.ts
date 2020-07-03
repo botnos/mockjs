@@ -1,4 +1,4 @@
-import {IMockOptions} from '..';
+import {IMockOptions} from '../mock';
 import {getData, getRandomFromArray} from '../lib/utils';
 import {BaseProvider} from './base';
 import {IMockAddress} from '../lib/data';
