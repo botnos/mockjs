@@ -11,7 +11,7 @@ export default class implements IMockData {
                 'Martha', 'Susan'
             ],
             lastName: [
-                'Peters', 'Rogers'
+                'Peters', 'Rogers', 'Robinson'
             ]
         };
     }

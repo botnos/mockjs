@@ -1,6 +1,6 @@
-import {Mock} from '../src';
+import {MockJs} from '../src';
 
-const mock = new Mock();
+const mock = new MockJs();
 
 describe('lorem', () => {
 
