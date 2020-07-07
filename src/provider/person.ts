@@ -37,15 +37,20 @@ export const Person = <T extends Constructable<BaseProvider>>(base: T) => {
         }
 
         get fullName(): string {
+            this.delayProcess = true;
             this.result = `${this.firstName} ${this.lastName}`;
+            this.delayProcess = false;
             return this.process();
         }
 
         get person(): object {
-            return {
+            this.delayProcess = true;
+            this.result = {
                 firstName: this.firstName,
                 lastName: this.lastName,
             };
+            this.delayProcess = false;
+            return this.process();
         }
     };
 };

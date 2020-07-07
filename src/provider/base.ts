@@ -10,7 +10,8 @@ export interface IOptions {
 
 export class BaseProvider {
     #modifiers: any = [];
-    #_result: any = '';
+    #result: any = '';
+    #delayProcess: boolean = false;
     readonly #options: IOptions = {
         locale: Loc.en_US,
         gender: Gender.U,
@@ -27,16 +28,20 @@ export class BaseProvider {
     }
 
     protected process() {
-        // tslint:disable-next-line:no-console
-        console.log('#result is: ', this.#_result);
         this.#modifiers.forEach((m: any) => m());
-        this.#modifiers = [];
+        if (!this.#delayProcess) {
+            this.#modifiers = [];
+        }
         return this.val();
     }
 
+    protected set delayProcess(value: boolean) {
+        this.#delayProcess = value;
+    }
+
     protected val() {
-        const val = this.#_result;
-        this.#_result = '';
+        const val = this.#result;
+        this.#result = '';
         return val;
     }
 
@@ -49,11 +54,11 @@ export class BaseProvider {
     }
 
     protected get result(): any {
-        return this.#_result;
+        return this.#result;
     }
 
     protected set result(value: any) {
-        this.#_result = value;
+        this.#result = value;
     }
 
     get female() {

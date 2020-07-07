@@ -6,7 +6,17 @@ export const Modifier = <T extends Constructable<BaseProvider>>(base: T) => {
         get lower(): any {
             this.addModifier(() => {
                 const isArray = Array.isArray(this.result);
-                this.result = isArray ? this.result.map(o => o.toLowerCase()) : this.result.toLowerCase();
+                if (isArray) {
+                    this.result = this.result.map(o => o.toLowerCase());
+                } else {
+                    if (typeof this.result === 'string') {
+                        this.result = this.result.toLowerCase();
+                    } else if (typeof this.result === 'object') {
+                        Object.keys(this.result).forEach((key) => {
+                            this.result[key] = this.result[key].toLowerCase();
+                        });
+                    }
+                }
             });
             return this;
         }
@@ -14,7 +24,17 @@ export const Modifier = <T extends Constructable<BaseProvider>>(base: T) => {
         get upper(): any {
             this.addModifier(() => {
                 const isArray = Array.isArray(this.result);
-                this.result = isArray ? this.result.map(o => o.toUpperCase()) : this.result.toUpperCase();
+                if (isArray) {
+                    this.result = this.result.map(o => o.toUpperCase());
+                } else {
+                    if (typeof this.result === 'string') {
+                        this.result = this.result.toUpperCase();
+                    } else if (typeof this.result === 'object') {
+                        Object.keys(this.result).forEach((key) => {
+                            this.result[key] = this.result[key].toUpperCase();
+                        });
+                    }
+                }
             });
             return this;
         }
