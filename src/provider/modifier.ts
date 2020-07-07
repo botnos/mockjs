@@ -1,4 +1,4 @@
-import {BaseProvider, Constructable} from './base';
+import {BaseProvider, Constructable} from '../lib/base';
 
 export const Modifier = <T extends Constructable<BaseProvider>>(base: T) => {
     return class extends base {

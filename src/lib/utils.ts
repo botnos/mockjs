@@ -1,6 +1,6 @@
 import {IMockData} from './data';
 import {getLocaleData} from './locale';
-import {IOptions} from '../provider/base';
+import {IOptions} from './base';
 
 const localeMap = new Map();
 

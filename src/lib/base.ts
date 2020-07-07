@@ -1,5 +1,10 @@
-import {Gender} from '../lib/gender';
-import {Loc} from '../lib/locale';
+import {Gender} from './gender';
+import {Loc} from './locale';
+import {Address} from '../provider/address';
+import {Internet} from '../provider/internet';
+import {Lorem} from '../provider/lorem';
+import {Person} from '../provider/person';
+import {Modifier} from '../provider/modifier';
 
 export type Constructable<T = {}> = new (...args: any[]) => T;
 
@@ -71,3 +76,5 @@ export class BaseProvider {
         return this;
     }
 }
+
+export const MockJs = Address(Internet(Lorem(Person(Modifier(BaseProvider)))));

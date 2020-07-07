@@ -1,4 +1,4 @@
-import {BaseProvider, Constructable} from './base';
+import {BaseProvider, Constructable} from '../lib/base';
 import {getRandomFromArray} from '../lib/utils';
 
 export const Lorem = <T extends Constructable<BaseProvider>>(base: T) => {

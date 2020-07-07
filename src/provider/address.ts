@@ -1,4 +1,4 @@
-import {BaseProvider, Constructable} from './base';
+import {BaseProvider, Constructable} from '../lib/base';
 import {getData, getRandomFromArray} from '../lib/utils';
 import {IMockAddress} from '../lib/data';
 

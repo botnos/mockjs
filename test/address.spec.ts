@@ -1,4 +1,4 @@
-import {MockJs} from '../src';
+import {MockJs} from '../src/lib/base';
 import {getLocaleData, Loc} from '../src/lib/locale';
 
 const mock = new MockJs();
