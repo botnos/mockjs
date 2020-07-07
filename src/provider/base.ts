@@ -9,9 +9,9 @@ export interface IOptions {
 }
 
 export class BaseProvider {
-    protected result: any = '';
-    protected modifiers: any = [];
-    protected options: IOptions = {
+    #modifiers: any = [];
+    #_result: any = '';
+    readonly #options: IOptions = {
         locale: Loc.en_US,
         gender: Gender.U,
     };
@@ -19,32 +19,50 @@ export class BaseProvider {
     constructor(options?: Loc | IOptions) {
         if (options !== undefined) {
             if (typeof options === 'string') {
-                this.options.locale = options;
+                this.#options.locale = options;
             } else if (typeof options === 'object') {
-                this.options = options;
+                this.#options = options;
             }
         }
     }
 
     protected process() {
-        this.modifiers.forEach((m: any) => m());
-        this.modifiers = [];
+        // tslint:disable-next-line:no-console
+        console.log('#result is: ', this.#_result);
+        this.#modifiers.forEach((m: any) => m());
+        this.#modifiers = [];
         return this.val();
     }
 
     protected val() {
-        const val = this.result;
-        this.result = '';
+        const val = this.#_result;
+        this.#_result = '';
         return val;
     }
 
+    protected addModifier(modifier) {
+        this.#modifiers.push(modifier);
+    }
+
+    protected get options(): IOptions {
+        return this.#options;
+    }
+
+    protected get result(): any {
+        return this.#_result;
+    }
+
+    protected set result(value: any) {
+        this.#_result = value;
+    }
+
     get female() {
-        this.options.gender = Gender.F;
+        this.#options.gender = Gender.F;
         return this;
     }
 
     get male() {
-        this.options.gender = Gender.M;
+        this.#options.gender = Gender.M;
         return this;
     }
 }

@@ -1,35 +1,34 @@
 import {BaseProvider, Constructable} from './base';
 import {getData, getRandomFromArray} from '../lib/utils';
 import {Gender} from '../lib/gender';
+import {IMockPerson} from '../lib/data';
 
 export const Person = <T extends Constructable<BaseProvider>>(base: T) => {
     return class extends base {
-
-        // tslint:disable-next-line:variable-name
-        private __person = Symbol('person');
+        #people: IMockPerson;
 
         constructor(...args: any[]) {
             super(...args);
-            this[this.__person] = getData(this.options).person();
+            this.#people = getData(this.options).person();
         }
 
         get firstName(): string {
             const gender = this.options.gender;
             if (gender === Gender.F) {
-                this.result = getRandomFromArray(this[this.__person].firstNameFemale);
+                this.result = getRandomFromArray(this.#people.firstNameFemale);
             } else if (gender === Gender.M) {
-                this.result = getRandomFromArray(this[this.__person].firstNameMale);
+                this.result = getRandomFromArray(this.#people.firstNameMale);
             } else {
                 this.result = getRandomFromArray([
-                    ...this[this.__person].firstNameFemale,
-                    ...this[this.__person].firstNameMale
+                    ...this.#people.firstNameFemale,
+                    ...this.#people.firstNameMale
                 ]);
             }
             return this.process();
         }
 
         get lastName(): string {
-            this.result = getRandomFromArray(this[this.__person].lastName);
+            this.result = getRandomFromArray(this.#people.lastName);
             return this.process();
         }
 

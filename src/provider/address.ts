@@ -1,18 +1,18 @@
 import {BaseProvider, Constructable} from './base';
 import {getData, getRandomFromArray} from '../lib/utils';
+import {IMockAddress} from '../lib/data';
 
 export const Address = <T extends Constructable<BaseProvider>>(base: T) => {
     return class extends base {
-        // tslint:disable-next-line:variable-name
-        private __address = Symbol('address');
+        #addresses: IMockAddress;
 
         constructor(...args: any[]) {
             super(...args);
-            this[this.__address] = getData(this.options).address();
+            this.#addresses = getData(this.options).address();
         }
 
         get state(): string {
-            this.result = getRandomFromArray(this[this.__address].state);
+            this.result = getRandomFromArray(this.#addresses.state);
             return this.process();
         }
 
@@ -27,7 +27,7 @@ export const Address = <T extends Constructable<BaseProvider>>(base: T) => {
         }
 
         get states(): string[] {
-            this.result = this[this.__address].state;
+            this.result = this.#addresses.state;
             return this.process();
         }
 
